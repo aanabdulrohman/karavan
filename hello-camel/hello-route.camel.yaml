@@ -1,0 +1,18 @@
+- route:
+    id: rute-hello-world
+    from:
+      id: from-d401
+      uri: timer
+      parameters:
+        period: "5000"
+        timerName: pemicu-waktu
+      steps:
+        - setBody:
+            id: setBody-9164
+            expression:
+              constant:
+                id: constant-8ec0
+                expression: "{\"status\": \"PING\", \"message\": \"Koneksi Aman\"}"
+        - log:
+            id: cetak-log-konsol
+            message: "Data masuk ke Pos Bridge: ${body}"
